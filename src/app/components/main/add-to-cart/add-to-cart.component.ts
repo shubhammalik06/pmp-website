@@ -19,6 +19,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   cartNumberSubscription$!: Subscription;
   cartDetails$!: Subscription;
 
+
+  productTotalPrice : number = 0;
+
   constructor(private store: Store<AppState>, private route: Router, private sharedService : SharedService) {}
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       .select(getCartProducts)
       .subscribe((productsInCart: any) => {
         this.productsInCart = productsInCart.products;
+        this.productTotalPrice = this.productTotal(productsInCart.products);
       });
   }
 
@@ -39,6 +43,12 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   removeFromCart(pID:any){
     this.sharedService.removeFromCart(pID);
   }
+
+
+  productTotal(items:any){
+    return items.map((n:any) => n.pprice).reduce((acc:any, curr:any) => acc + curr, 0);
+  }
+
 
   ngOnDestroy(): void {
     this.cartNumberSubscription$.unsubscribe();

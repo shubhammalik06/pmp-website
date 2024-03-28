@@ -1,40 +1,69 @@
-<div class="container">
-    <h1>
-        Number of items added to Cart {{cartNumber}}
-    </h1>
+<div class="marginPadding">
 
-    <div *ngFor="let product of productsInCart">
-        <div class="d-flex">
+    <h3 class="title-middle px-3 m-3">
+        My Cart
+    </h3>
 
-            <div>
-                <div>Product Name {{product.productName}}</div>
-                <div>Product Type {{product.productType}}</div>
-                <div>Product Brand {{product.pbrand}}</div>
+    <hr />
 
-                <div>Product Description {{product.description}}</div>
 
-                <div>Website {{product.website}}</div>
+    <br />
 
+    <div class="col-md-12 flex-main">
+
+        <div class="col-md-10">
+            <div class="flex-space-between margin-15" *ngFor="let product of productsInCart" >
+                <div class="col-md-7 flex-space-between">
+    
+                    <div>
+                        <img src={{product.images[0].imageSrc}} />
+                    </div>
+    
+                    <div>
+                        <div>{{product.productName}}</div>
+                        <div>{{product.productType}}</div>
+                        <div>{{product.pbrand}}</div>
+    
+                    </div>
+    
+                    <div>
+                        Quantity : 0
+                    </div>
+    
+                </div>
+    
+                <div class="col-md-3 flex-end">
+                    <div>Price : Rs. {{product.pprice}}/-</div>
+                    <button class="btn btn-danger" (click)="removeFromCart(product.pid)">
+                        Remove From Cart
+                    </button>
+                </div>
             </div>
-
-            <div>
-                <div>Product Price {{product.pprice}}</div>
-                <br />
-                <button class="btn btn-danger" (click)="removeFromCart(product.pid)">
-                    Remove From Cart
-                </button>
-            </div>
+    
         </div>
 
 
-
-        <hr />
+        <div class="col-md-2">
+            Shipping
+        </div>
     </div>
 
 
-    <button class="btn btn-primary" (click)="proceedToDetailsForm()" [disabled]="productsInCart.length === 0">
-        Proceed
-    </button>
+    <hr />
+
+    <div class="col-md-10 flex-space-between">
+       <span>Number of items : <b>{{cartNumber}}</b></span>
+
+        Total : {{productTotalPrice}}
+    </div>
+
+
+    <div class="d-md-flex justify-content-md-end">
+        <button class="btn btn-success" (click)="proceedToDetailsForm()" [disabled]="productsInCart.length === 0">
+            Proceed
+        </button>
+    </div>
+
 
 </div>
 <router-outlet></router-outlet>

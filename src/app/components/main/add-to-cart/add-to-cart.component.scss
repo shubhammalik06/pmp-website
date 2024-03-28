@@ -1,0 +1,25 @@
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.margin-15{
+    margin: 15px 15px;
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-evenly;
+
+    .product-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.flex-center{
+    display: flex;
+    justify-content: flex-end;
+}
+

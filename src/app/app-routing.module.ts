@@ -31,7 +31,7 @@ const routes: Routes = [
     loadChildren : () => import("../../src/app/components/main/contact-us/contact-us.module").then(module => module.ContactUsModule)
   },
   {
-    path: 'add-to-cart',
+    path: 'cart',
     loadChildren : () => import("../../src/app/components/main/add-to-cart/add-to-cart.module").then(module => module.AddToCartModule)
   },
   {

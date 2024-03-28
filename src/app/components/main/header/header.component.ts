@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   addToCartBtn(){
-    this.router.navigateByUrl("add-to-cart");
+    this.router.navigateByUrl("cart");
   }
 
 
