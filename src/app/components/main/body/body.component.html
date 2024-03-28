@@ -1,0 +1,33 @@
+<section>
+    <app-carousel [images]="carouselImages" [styles]="styles"></app-carousel>
+</section>
+
+
+<div class="px-3 m-3">
+    <hr />
+
+    <h4 class="title-middle">Products</h4>
+
+    <hr />
+    
+    <div>
+        <app-search (searchEvent)="searchValue($event)"></app-search>
+    </div>
+
+    <div *ngIf="!showShimmer; else shimmer">
+        <section class="row col-md-12 d-flex">
+            <div class="col-md-2">
+                Filter
+            </div>
+
+            <div class="col-md-10">
+                <app-product-list [productList]="products" [searchValue]="searchString"></app-product-list>
+            </div>
+        </section>
+    </div>
+
+    <ng-template #shimmer>
+        <app-shimmer></app-shimmer>
+    </ng-template>
+
+</div>

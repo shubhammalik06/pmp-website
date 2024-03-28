@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/colors.scss";
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+
+.title-middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marginPadding {
+    margin: 0 10px;
+    padding: 10px;
+}
+

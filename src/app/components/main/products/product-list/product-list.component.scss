@@ -1,0 +1,23 @@
+.card-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .card {
+        width: 18rem;
+        min-height: 56vh;
+        margin: 1%;
+
+    }
+
+    .card:hover{
+        cursor: pointer;
+        background-color: #f0f0f0;
+    }
+
+    .card-btn{
+        display: flex;
+        justify-content: space-around;
+    }
+}

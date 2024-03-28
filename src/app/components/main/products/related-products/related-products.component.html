@@ -1,0 +1,13 @@
+<div >
+    <hr />
+
+    <h4 class="title-middle">
+        Related Products
+    </h4>
+
+    <div class="container d-flex">
+        <div *ngFor="let product of relatedProductsArray"> 
+           <app-product-template [product]="product"></app-product-template>
+        </div>
+    </div>
+</div>

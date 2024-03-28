@@ -1,0 +1,6 @@
+<div class="search-hero d-flex">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="Search products..." (ngModelChange)="searchItems(searchText)">
+
+        <button class="btn btn-warning" (click)="resetSearch()">Reset</button>
+</div>

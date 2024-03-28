@@ -1,0 +1,37 @@
+.card-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .card {
+        width: 18rem;
+        min-height: 56vh;
+        margin: 1%;
+
+    }
+
+    .card-border:hover{
+        cursor: pointer;
+        background-color: #f0f0f0;
+    }
+
+    .card-btn{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.card-border{
+    border: 1px solid #000;
+    padding: 15px;
+    border-radius: 10px;
+
+    .card-img-top{
+        border-radius: 5px;
+    }
+
+    .padding-title{
+        padding: 10px 0;
+    }
+}

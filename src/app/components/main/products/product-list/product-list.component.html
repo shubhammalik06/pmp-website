@@ -1,0 +1,29 @@
+<div class="row col-md-12">
+    <div class="card-main">
+
+        <div class="card" *ngFor="let product of products | filter: searchValue">
+
+            <div class="m-2" (click)="onProductClick(product)">
+                <img class="card-img-top" src={{product.images[0].imageSrc}} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                </div>
+                <div class="card-body">
+                    <div class="">Price : Rs. {{product.pprice}}/-</div>
+                    <div class="">Product Discount : {{product.customer_discount}}</div>
+                    <div class="">Product Type : {{product.productType}}</div>
+                </div>
+            </div>
+
+            <div class="card-body card-btn">
+                <button class="btn btn-primary me-2" (click)="addToCart(product)">Add to cart</button>
+                <button class="btn btn-primary" (click)="null">Buy Now</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>
